@@ -6,6 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import NavItems from "../navbar/NavItems"
 
 const Sheet = SheetPrimitive.Root
 
@@ -69,6 +70,10 @@ const SheetContent = React.forwardRef<
         <X className="h-4 w-4" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
+      <>
+        <p>Nav item 3</p>
+        </>
+   
     </SheetPrimitive.Content>
   </SheetPortal>
 ))

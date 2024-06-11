@@ -4,14 +4,20 @@ import { useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import Image from 'next/image'
-import {Input } from "@/components/ui/Input"
+import { Input } from "@/components/ui/Input"
+
+interface SearchProps{
+  disable?: boolean
+}
 
 
-const Search = () => {
+const Search:React.FC<SearchProps> = ({disable = false}) => {
   
   const params = useSearchParams();
 
-
+  if (disable) {
+    return null;
+}
  
 
   return ( 

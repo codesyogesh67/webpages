@@ -9,12 +9,21 @@ import {
   import Image from "next/image"
   import { Separator } from "@/components/ui/separator"
   import NavItems from "./NavItems"
+  import {NavItemsProps} from "@/types"
+import Logo from "./Logo"
+
+  interface MobileLogoProps{
+    logoPath: string,
+    links: NavItemsProps
+  }
   
   
-  const MobileNav = () => {
+  const MobileNav:React.FC<MobileLogoProps> = ({logoPath,links}) => {
     return (
       <nav className="md:hidden">
         <Sheet>
+          
+       
           <SheetTrigger className="align-middle">
             <Image 
               src="/menu.svg"
@@ -24,16 +33,17 @@ import {
               className="cursor-pointer"
             />
           </SheetTrigger>
-          <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
-            <Image 
-              src="/logo.svg"
-              alt="logo"
-              width={128}
-              height={38}
-            />
-            <Separator className="border border-gray-50" />
-            <NavItems />
-          </SheetContent>
+
+          <SheetContent>
+        <SheetHeader>
+              <SheetTitle>
+                <Logo logoPath={logoPath} />
+              </SheetTitle>
+              
+            </SheetHeader>
+
+
+            </SheetContent>
         </Sheet>
       </nav>
     )

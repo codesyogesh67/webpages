@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Container from "@/components/Container";
-
+import Navbar from "@/components/navbar/Navbar";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link'
 
-export default function Home() {
+export default function Banner() {
   return (
     <Container>
 
-<section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
+<section className="py-5 md:py-10">
         <div className="max-w-7xl lg:mx-auto w-full grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="font-bold text-[40px] leading-[48px] lg:text-[48px] lg:leading-[60px]  xl:text-[58px] xl:leading-[74px]">Host, Connect, Celebrate: Your Events, Our Platform!</h1>
